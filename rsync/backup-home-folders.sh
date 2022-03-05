@@ -1,11 +1,13 @@
 #!/bin/sh
 
-destination=~/Backup/M1/
+destination=/Volumes/Untitled/Backup/M1/
 
-rsync -vaz ~/Desktop ${destination}
-rsync -vaz --exclude=node_modules/ ~/Dev targetHost:${destination}
-rsync -vaz ~/Documents ${destination}
-rsync -vaz ~/Downloads ${destination}
-rsync -vaz ~/Movies ${destination}
-rsync -vaz ~/Music ${destination}
-rsync -vaz ~/Pictures ${destination}
+mkdir -p $destination
+
+rsync -Rvaz --progress ~/Desktop $destination
+rsync -Rvaz --progress --exclude=node_modules/ ~/Dev targetHost:$destination
+rsync -Rvaz --progress ~/Documents $destination
+rsync -Rvaz --progress ~/Downloads $destination
+rsync -Rvaz --progress ~/Movies $destination
+rsync -Rvaz --progress ~/Music $destination
+rsync -Rvaz --progress ~/Pictures $destination
