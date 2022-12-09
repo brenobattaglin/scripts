@@ -1,2 +1,3 @@
 # scripts
-Snippets and scripts I use often
+
+Scripts I use often.
