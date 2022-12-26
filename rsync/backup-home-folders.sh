@@ -4,10 +4,10 @@ destination=/Volumes/Untitled/Backup/M1/
 
 mkdir -p $destination
 
-rsync -Rvaz --progress ~/Desktop $destination
-rsync -Rvaz --progress --exclude=node_modules/ ~/Dev targetHost:$destination
-rsync -Rvaz --progress ~/Documents $destination
-rsync -Rvaz --progress ~/Downloads $destination
-rsync -Rvaz --progress ~/Movies $destination
-rsync -Rvaz --progress ~/Music $destination
-rsync -Rvaz --progress ~/Pictures $destination
+rsync -Rva --progress ~/Desktop $destination
+rsync -Rva --progress --exclude=node_modules/ ~/Dev targetHost:$destination
+rsync -Rva --progress ~/Documents $destination
+rsync -Rva --progress ~/Downloads $destination
+rsync -Rva --progress ~/Movies $destination
+rsync -Rva --progress ~/Music $destination
+rsync -Rva --progress ~/Pictures $destination
