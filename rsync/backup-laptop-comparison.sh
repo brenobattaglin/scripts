@@ -2,24 +2,22 @@
 
 destination=/Volumes/Untitled/Backup/M1/
 
+backup_command="rsync -ahn --progress --stats --ignore-existing"
+params="--delete"
+
 mkdir -p $destination
 
 
-rsync -Rvan --progress ~/Desktop $destination
-
-rsync -Rvan --progress --exclude=node_modules/ ~/Developer targetHost:$destination
-
-rsync -Rvan --progress ~/Documents $destination
-
-rsync -Rvan --progress ~/Downloads $destination
-
-rsync -Rvan --progress ~/Games $destination
+$backup_command ~/Desktop $destination $params
+$backup_command --exclude=node_modules/ --exclude=.git/ ~/Developer $destination $params
+$backup_command ~/Documents $destination $params
+$backup_command ~/Downloads $destination $params
+$backup_command ~/Games $destination $params
 
 //iCloud
-rsync -Rvan --progress --exclude=.Trash/ ~/Library/Mobile\ Documents/com~apple~CloudDocs $destination
+$backup_command --exclude=.Trash/ ~/Library/Mobile\ Documents/com~apple~CloudDocs $destination $params
+$backup_command --exclude=.Trash/ ~/Library/Mobile\ Documents/iCloud~md~obsidian $destination $params
 
-rsync -Rvan --progress ~/Movies $destination
-
-rsync -Rvan --progress ~/Music $destination
-
-rsync -Rvan --progress ~/Pictures $destination
+$backup_command ~/Movies $destination $params
+$backup_command ~/Music $destination $params
+$backup_command ~/Pictures $destination $params
