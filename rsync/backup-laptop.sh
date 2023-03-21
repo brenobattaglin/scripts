@@ -1,6 +1,6 @@
 #!/bin/sh
 
-destination=/Volumes/Safekeep-W/Backup/M1/
+destination=/Volumes/Skydrive/Backup/M1/
 
 backup_command="rsync -ah --progress --stats --ignore-existing"
 params="--delete"
