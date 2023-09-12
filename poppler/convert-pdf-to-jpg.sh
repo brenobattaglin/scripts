@@ -1,5 +1,7 @@
 #!/bin/sh
 
-for file in *.pdf; do
+read -p "What is the path? " path
+
+for file in $path/*.pdf; do
     pdftoppm -jpeg "$file" "${file%.*}"
 done
